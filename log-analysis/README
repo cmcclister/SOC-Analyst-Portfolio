@@ -71,7 +71,7 @@ Credentials exposed in HTTP traffic represent a **CRITICAL** risk vector. The pr
 
 ### User Attribution Analysis
 From PCAP alone, we can infer:
-- **Account naming pattern:** Suggests either test account (`pwned.se` subdomain indicator) or compromised account
+- **Account naming pattern:** Suggests either test account (`[REDACTED]` subdomain indicator) or compromised account
 - **Email service:** Public email provider (GMX) = consumer-grade security, not enterprise-managed
 - **Risk implication:** Account compromise likely not detected by enterprise monitoring if this were real
 
@@ -160,7 +160,7 @@ From PCAP alone, we can infer:
 | Evidence Category | Details | Location |
 |------------------|---------|----------|
 | **PCAP File** | case2.pcap | `/home/ubuntu/Desktop/NetworkMiner_[version]/` |
-| **Extracted File** | 367408.gif | `/home/ubuntu/Desktop/NetworkMiner_2-7-2/AssembledFiles/46.228.164.[REDACTED]/TCP-80/r/dd/id/` |
+| **Extracted File** | 367408.gif | `/home/ubuntu/Desktop/NetworkMiner_[version]/AssembledFiles/46.228.164.[REDACTED]/TCP-80/r/dd/id/` |
 | **Frame Reference** | Frame 19184 | Packet capture frame number |
 | **Protocol** | HTTP | Layer 4 protocol |
 | **Port** | TCP/80 | Standard web traffic |
@@ -208,13 +208,13 @@ Status Code:    200 (if successful) or 30x (if redirect)
 ### IOC Inventory
 
 | IOC Type | Indicator (Sanitized) | Confidence | TTL |
-|----------|----------------------|----------------------|------------|-----|
-| **IP Address** | `[REDACTED]` | High | 30 days |
-| **Domain** | `[REDACTED-sync].rlcdn.com` | Critical | Long-term |
-| **Email** | `[REDACTED]@gmx.com` | Critical | Immediate |
-| **URL Path** | `[REDACTED]/[ENCODED]?partner_uid=[ID]` | Critical | Immediate |
-| **File Hash** | [MD5/SHA256 of 367408.gif] | Medium | Medium-term |
-| **Tracking Pixel** | `367408.gif` | Medium | Medium-term |
+|--------------------|-----------------------------------------|------------|-------------|
+| **IP Address**     | `[REDACTED]`                            | High       | 30 day
+| **Domain**         | `[REDACTED-sync].rlcdn.com`             | Critical   | Long-ter
+| **Email**          | `[REDACTED]@gmx.com`                    | Critical   | Immediate
+| **URL Path**       | `[REDACTED]/[ENCODED]?partner_uid=[ID]` | Critical   | Immediate
+| **File Hash**      | [MD5/SHA256 of 367408.gif]              | Medium     | Medium-term
+| **Tracking Pixel** | `367408.gif`                            | Medium     | Medium-term
 
 ### IOC Actionability
 
@@ -239,18 +239,16 @@ Status Code:    200 (if successful) or 30x (if redirect)
 
 ## 9. Timeline Reconstruction
 
-```
 Incident Progression Matrix:
 
-Phase          | Timeline                    | Key Events             | Investigation Status
-───────────────┼─────────────────────────────┼────────────────────────┼──────────────────────
-Detection      | T+0 (2015-03-06 14:05:34)   | Credential exposure    | IDENTIFIED
-Confirmation   | T+1-30 minutes              | File extraction        | CONFIRMED
-Investigation  | T+1-24 hours                | Log analysis           | IN PROGRESS
-Containment    | T+24-48 hours               | Password reset, block  | RECOMMENDED
-Recovery       | T+48-72 hours               | Account monitoring     | ONGOING
-Post-Incident  | T+7-30 days                 | Lessons learned        | PLANNED
-```
+| Phase | Timeline | Key Events | Investigation Status |
+|--------------|-----------------------------|------------------------|----------------------|
+| Detection      | T+0 (2015-03-06 14:05:34)   | Credential exposure    | IDENTIFIED |
+| Confirmation   | T+1-30 minutes              | File extraction        | CONFIRMED |
+| Investigation  | T+1-24 hours                | Log analysis           | IN PROGRESS |
+| Containment    | T+24-48 hours               | Password reset, block  | RECOMMENDED |
+| Recovery       | T+48-72 hours               | Account monitoring     | ONGOING |
+| Post-Incident  | T+7-30 days                 | Lessons learned        | PLANNED |
 
 ---
 
@@ -264,7 +262,6 @@ Post-Incident  | T+7-30 days                 | Lessons learned        | PLANNED
 | **TA0007: Discovery** | T1087 | Account enumeration post-compromise | Email address and tracking ID |
 | **TA0008: Lateral Movement** | T1078 | Use of stolen credentials for access | Credential exposure likely enables this |
 | **TA0009: Collection** | T1123, T1185 | Gathering account information | Tracking pixel collects user identifiers |
-| **TA0010: Exfiltration** | T1041 | Data exfiltration over C2 |
 
 ## 11. What is the true-positive/false-positive determination?
 
@@ -277,7 +274,6 @@ Post-Incident  | T+7-30 days                 | Lessons learned        | PLANNED
 - Preserve the original PCAP and work from a copy. Record hashes, tool versions, timezone assumptions, and relevant frame/stream references.
 - Verify the protocol, direction, and payload around the credential and frame 19184; correlate with DNS, proxy, endpoint, and authentication telemetry.
 - Escalate or block the hostname only if organizational policy and corroborating evidence support that action. Do not block solely because a tracking URL appears in a lab capture.
-- Remove secrets from repository history as well as the visible write-up if they were accidentally committed.
 
 ## 13. Lessons Learned
 
