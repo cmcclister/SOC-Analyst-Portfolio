@@ -23,7 +23,7 @@ This investigation follows the **NIST Incident Response Lifecycle (SP 800-61 Rev
 ## 1. Alert Definition
 
 ### The Alert
-**Network-based detection of plaintext credential exposure in HTTP traffic combined with suspicious redirect to external tracking domain.**
+Network-based detection of plaintext credential exposure in HTTP traffic combined with suspicious redirect to external tracking domain.
 
 ### Alert Characteristics
 | Attribute | Value |
@@ -42,7 +42,7 @@ Credentials exposed in HTTP traffic represent a **CRITICAL** risk vector. The pr
 ## 2. Initial Hypothesis
 
 ### Hypothesis Statement
-**A system or user on the monitored network has transmitted email account credentials in plaintext via HTTP, likely as part of web form submission or authentication attempt. This same traffic session contains a redirect to an external tracking/synchronization domain, suggesting either:**
+A system or user on the monitored network has transmitted email account credentials in plaintext via HTTP, likely as part of web form submission or authentication attempt. This same traffic session contains a redirect to an external tracking/synchronization domain, suggesting either:
 
 - **Scenario A (Primary):** Compromised web application capturing credentials for exfiltration.
 - **Scenario B:** Phishing landing page harvesting credentials.
