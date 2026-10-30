@@ -1,4 +1,4 @@
-# Investigation #1 — Suspicious Authentication Activity"
+# Investigation #1 — "Suspicious Authentication Activity"
 **TryHackMe NetworkMiner Case Study**
 
 ---
