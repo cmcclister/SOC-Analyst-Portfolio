@@ -96,7 +96,9 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer; misleadingly named with ".CAB" extension when the actual file is ".RAR" |
 
 **Analysis performed:** hash lookup at hxxps://www[.]virustotal[.]com/gui/home/search
+
 **Findings:** Per VirusTotal search of the hash, analyzed on 2026-11-04, "50/64 security vendors flagged this file as malicious". The "Popular threat label" is noted as **trojan.msil/loki**, the "Threat categories" as **trojan**, and the "Family labels" as **msil**, **loki**, and **agensla**. "Loki" was noted by a majority of engines in the "Security vendors' analysis", including "ALYac", "Arcabit", "BitDefender", "CTX", "Emisoft", "GData", and others.
+
 **Safety note:** File was hashed in an isolated environment. The file was **sha256sum** hashed in Terminal with the resulting hash value checked at hxxps://www[.]virustotal[.]com/gui/home/search
 
 ## Indicators of Compromise
@@ -157,10 +159,10 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 ## Screenshots
 
 **Email Body**
-![Email Body](Image 01.png)
+![Email Body](Image_01.png)
 
 **Email Message Source**
-![Email Message Source](Image 02.png)
+![Email Message Source](Image_02.png)
 
 **VirusTotal Scan Results**
-![VirusTotal Scan Results](Image 03.png)
+![VirusTotal Scan Results](Image_03.png)
