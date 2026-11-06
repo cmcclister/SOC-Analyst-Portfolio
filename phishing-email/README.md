@@ -18,7 +18,7 @@
 
 ## Executive Summary
 
-An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(09674321)**, received by **webmaster@redacted[.]org** on **2020/06/10, 05:58**, was investigated after **the employee alerted us that this behavior does not align with the customer's usual communication style**. The analysis reviewed the message headers, sender authentication, domains, and attachment(s), with reputation checks performed using VirusTotal.
+An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(09674321)**, received by **webmaster@redacted[.]org** on **2020/06/10, 10:58 AM UTC**, was investigated after **the employee alerted us that this behavior does not align with the customer's usual communication style**. The analysis reviewed the message headers, sender authentication, domains, and attachment(s), with reputation checks performed using VirusTotal.
 
 **Assessment:** Malicious  
 **Confidence:** High  
@@ -32,9 +32,9 @@ The conclusion is based on a **VirusTotal scan of the email attachment hash, con
 | Field | Value |
 |---|---|
 | Alert name / ID | N/A |
-| Severity | Medium (attachment is malicious, but was not opened by the investigator) |
+| Severity | High (attachment is malicious, but was not opened by the investigator) |
 | Detection source | Training alert |
-| Alert time | 2020-06-10 05:58 AM |
+| Alert time | 2020-06-10 10:58 AM UTC |
 | Recipient | webmaster@redacted[.]org |
 | Trigger / reason | According to the employee, this behavior does not align with the customer's usual communication style. Concerned that the email may be malicious, the message has been escalated to the SOC (Security Operations Center) for further investigation. |
 | Investigation scope | Email, file attachment (hash lookup), and online domain investigation |
@@ -49,7 +49,7 @@ The conclusion is based on a **VirusTotal scan of the email attachment hash, con
 | Reply-To | info[.]mutawamarine@mail[.]com |
 | Return-Path | info@mutawamarine[.]com |
 | To / Cc | webmaster@redacted[.]org |
-| Date | 10 Jun 2020 05:58 AM |
+| Date | 10 Jun 2020 10:58 AM UTC |
 | Message-ID | 20200609225823.DFAEAAF31A6B7414@mutawamarine[.]com |
 | Received chain | "Received: from 10[.]197[.]41[.][REDACTED]  (EHLO sub.redacted[.]com) (x.x.x.x) by mta4212[.]mail[.]bf1[.]yahoo[.]com with SMTP; Wed, 10 Jun 2020 05:58:54 +0000. Received: from hwsrv-737338[.]hostwindsdns[.]com ([192[.]119[.]71[.][REDACTED]]:51810 helo=mutawamarine[.]com) by sub[.]redacted[.]com with esmtp (Exim 4.80) (envelope-from <info@mutawamarine[.]com>) id 1jissD-0004g5-Ts for webmaster@redacted[.]org; Wed, 10 Jun 2020 01:02:04 -0400" |
 | Source IP | 192[.]119[.]71[.][REDACTED] |
@@ -61,7 +61,7 @@ The conclusion is based on a **VirusTotal scan of the email attachment hash, con
 
 ## Sender Analysis
 
-The visible sender was **info@mutawamarine[.]com** and the Reply-To address was **info.mutawamarine@mail[.]com**.
+The visible sender was **info@mutawamarine[.]com** and the Reply-To address was **info[.]mutawamarine@mail[.]com**.
 
 The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
@@ -69,11 +69,11 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | Control | Result | Evidence / notes |
 |---|---|---|
-| SPF | Unknown | "Received-SPF: fail (domain of mutawamarine[.]com does not designate x.x.x.x as permitted sender)" from email message source. No SPF record found per hxxps://dmarcian[.]com/spf-survey/. |
+| SPF | Fail at the receiving server | "Received-SPF: fail (domain of mutawamarine[.]com does not designate x.x.x.x as permitted sender)" from email message source. No SPF record found per hxxps://dmarcian[.]com/spf-survey/. |
 | DKIM | Unknown | No DKIM record found, per hxxps://mxtoolbox[.]com/dkim[.]aspx |
-| DMARC | Unknown | "dmarc=unknown" from email message source. Per hxxps://dmarcian[.]com/domain-checker/, this subdomain does not have its own DMARC record, it inherits the policy established at the parent domain level (p=reject). |
+| DMARC | Unknown | "dmarc=unknown" from email message source |
 
-**Interpretation:** Authentication on SPF, DKIM, and DMARC are all unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim.aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
+**Interpretation:** Authentication on SPF failed and DKIM, and DMARC are both unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim.aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
 
 ## URL Analysis
 
@@ -91,7 +91,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | File name | Type / size | SHA-256 | VirusTotal result | Assessment |
 |---|---|---:|---|---|
-| "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer |
+| "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer; misleadingly named with ".CAB" extension when the actual file is ".RAR" |
 
 **Analysis performed:** hash lookup at hxxps://www[.]virustotal[.]com/gui/home/search
 **Findings:** 50/64 security vendors flagged this file as malicious  
@@ -104,9 +104,8 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | Sender address | info@mutawamarine[.]com | Unknown | Medium |
 | Sender IP | 192[.]119[.]71[.][REDACTED] | Email | Medium |
 | URL | N/A | No URLs in the email body | N/A |
-| Domain | mutawamarine[.]com | SPF record is valid per hxxps://dmarcian[.]com/spf-survey/ | Medium |
+| Domain | mutawamarine[.]com | Fail at the receiving server | Medium |
 | File hash | "SWT_#09674321____PDF__.CAB"-named RAR Trojan/Infostealer | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | High |
-| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | Spam detection software, running on the system "sub.redacted[.]com", has identified this incoming email as possible spam. | High |
 
 ## MITRE ATT&CK Mapping
 
@@ -122,7 +121,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 **Rationale:** VirusTotal hash scan of the email attachment determined that it was a RAR archive file associated with Lokibot Trojan/Infostealer.
 
-**Evidence gaps:**  No dynamic analysis, no ANY.RUN results, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened.
+**Evidence gaps:**  No dynamic analysis, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened.
 
 **Scope limitation:** Email message source was examined, as well as the hashed value of the attachment, in a controlled lab environment.
 
@@ -151,3 +150,4 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | URL / domain reputation | N/A | 2026-11-04 | The email did not contain any links |
 | File hash / reputation | VirusTotal | 2026-11-04 | 50/64 security vendors flagged this file as malicious |
 | Other analysis | hxxps://dmarcian[.]com/spf-survey/, hxxps://www[.]virustotal[.]com/gui/home/search, hxxps://dmarcian[.]com/domain-checker/, hxxps://urlscan[.]io/, and hxxps://mxtoolbox[.]com/dkim[.]aspx | 2026-11-04 | See **Authentication Results** and **Attachment Analysis** above |
+| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04| Spam detection software, running on the system "sub.redacted[.]com", has identified this incoming email as possible spam. |
