@@ -22,7 +22,8 @@ An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(0967
 
 **Assessment:** Malicious  
 **Confidence:** High  
-**User interaction:** Attachment hash analyzed  
+**User interaction:** Reported to by employee who received the email, attachment not opened
+**Analyst interaction:** Attachment hash analyzed  
 **Impact observed:** None identified, attachment was not opened by analyst
 
 The conclusion is based on a **VirusTotal scan of the email attachment hash, confirmed as a Trojan/Infostealer RAR archive file**.
@@ -32,7 +33,7 @@ The conclusion is based on a **VirusTotal scan of the email attachment hash, con
 | Field | Value |
 |---|---|
 | Alert name / ID | N/A |
-| Severity | High (attachment is malicious, but was not opened by the investigator) |
+| Proposed Triage Rating | High (attachment is malicious, but was not opened by the investigator) |
 | Detection source | Training alert |
 | Alert time | 2020-06-10 10:58 AM UTC |
 | Recipient | webmaster@redacted[.]org |
@@ -44,7 +45,7 @@ The conclusion is based on a **VirusTotal scan of the email attachment hash, con
 | Field | Value |
 |---|---|
 | Subject | webmaster@redacted[.]org your: Transfer Reference Number:(09674321) |
-| From (display name) | "Mr. James Jackson" **NOTE**: Possible instance of display-name spoofing. |
+| From (display name) | "Mr. James Jackson" **NOTE**: Possible instance of display-name/domain mismatch. |
 | From (address) | info@mutawamarine[.]com |
 | Reply-To | info[.]mutawamarine@mail[.]com |
 | Return-Path | info@mutawamarine[.]com |
@@ -73,7 +74,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | DKIM | Unknown | No DKIM record found, per hxxps://mxtoolbox[.]com/dkim[.]aspx |
 | DMARC | Unknown | "dmarc=unknown" from email message source |
 
-**Interpretation:** Authentication on SPF failed and DKIM, and DMARC are both unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim.aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
+**Interpretation:** Authentication on SPF failed and DKIM, and DMARC are both unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim[.]aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
 
 ## URL Analysis
 
@@ -83,9 +84,10 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 ## Domain Analysis
 
-| Domain | Role | Observations | Reputation / DNS check | Assessment |
+| Domain | Role | Observations | DNS check | Assessment |
 |---|---|---|---|---|
-| **Received-SPF**: mutawamarine[.]com, **Authentication-Results**: atlas[REDACTED][.]free[.]mail[.]bf1[.]yahoo[.]com | Sender | No SPF, DKIM or DMARC records found, per hxxps://mxtoolbox[.]com/dkim[.]aspx, hxxps://dmarcian[.]com/spf-survey/, and hxxps://dmarcian[.]com/domain-checker/. | Per hxxps://urlscan[.]io/, verdict of "No classification". | Inconclusive, the limited information on this domain does not indicate that it is suspicious. **Received-SPF** value of **fail** in the email message source suggests that it may not be a safe domain. |
+| **Received-SPF**: mutawamarine[.]com | Sender | No SPF, DKIM or DMARC records found, per hxxps://mxtoolbox[.]com/dkim[.]aspx, hxxps://dmarcian[.]com/spf-survey/, and hxxps://dmarcian[.]com/domain-checker/. | Per hxxps://urlscan[.]io/, verdict of "No classification" returned. | Inconclusive, the limited information on this domain does not indicate that it is suspicious. **Received-SPF** value of **fail** in the email message source suggests that it may not be a safe domain. |
+| **Authentication-Results**: atlas[REDACTED][.]free[.]mail[.]bf1[.]yahoo[.]com | Sender | No SPF, DKIM or DMARC records found, per hxxps://mxtoolbox[.]com/dkim[.]aspx, hxxps://dmarcian[.]com/spf-survey/, and hxxps://dmarcian[.]com/domain-checker/. | Per hxxps://urlscan[.]io/, this domain was first seen three years ago, but was never scanned, so no malicious verdict returned. | Inconclusive, the limited information on this domain does not indicate that it is suspicious. |
 
 ## Attachment Analysis
 
@@ -94,8 +96,8 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer; misleadingly named with ".CAB" extension when the actual file is ".RAR" |
 
 **Analysis performed:** hash lookup at hxxps://www[.]virustotal[.]com/gui/home/search
-**Findings:** 50/64 security vendors flagged this file as malicious  
-**Safety note:** File was downloaded in an isolated environment. The file was **sha256sum** hashed in Terminal with the resulting hash value checked at hxxps://www[.]virustotal[.]com/gui/home/search
+**Findings:** Per VirusTotal search of the hash, analyzed on 2026-11-04, "50/64 security vendors flagged this file as malicious". The "Popular threat label" is noted as **trojan.msil/loki**, the "Threat categories" as **trojan**, and the "Family labels" as **msil**, **loki**, and **agensla**. "Loki" was noted by a majority of engines in the "Security vendors' analysis", including "ALYac", "Arcabit", "BitDefender", "CTX", "Emisoft", "GData", and others.
+**Safety note:** File was hashed in an isolated environment. The file was **sha256sum** hashed in Terminal with the resulting hash value checked at hxxps://www[.]virustotal[.]com/gui/home/search
 
 ## Indicators of Compromise
 
@@ -111,17 +113,17 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | Technique | Name | Evidence / rationale |
 |---|---|---|
-| T1566.001 | Initial Access: Phishing: Spearphishing Attachment | A malicious RAR attachment contained within a spearhpishing email. |
+| T1566.001 | Initial Access: Phishing: Spear Phishing Attachment | A malicious RAR attachment contained within a Spear Phishing email. |
 
 ## Determination
 
-**Verdict:** Malicious
+**Verdict:** Malicious attachment
 
 **Confidence:** High
 
-**Rationale:** VirusTotal hash scan of the email attachment determined that it was a RAR archive file associated with Lokibot Trojan/Infostealer.
+**Rationale:** Email asssessed as malicious with high confidence based on the attachment hash reputation. VirusTotal hash scan of the email attachment determined that it was a RAR archive file associated with Lokibot Trojan/Infostealer.
 
-**Evidence gaps:**  No dynamic analysis, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened.
+**Evidence gaps:**  No dynamic analysis, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened. Recipient execution and endpoint impact were not assessed.
 
 **Scope limitation:** Email message source was examined, as well as the hashed value of the attachment, in a controlled lab environment.
 
@@ -130,7 +132,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 1. **Contain:** Quarantine or remove the message from affected mailboxes.
 2. **Protect users:** Block confirmed malicious file hash, sender domain, and IP using appropriately scoped controls. Search for other recipients of similar messages, reset credentials if the user interacted with the file, and add a detection rule for the subject pattern.
 3. **Investigate exposure:** Search mail, proxy, DNS, EDR, and authentication logs for the indicators and recipient activity. Determine whether the URL was visited or the attachment was opened.
-4. **Respond to interaction:** Isolate the affected endpoint and investigate it under the incident-response process, but only if the attachment wsa opened.
+4. **Respond to interaction:** Isolate the affected endpoint and investigate it under the incident-response process, but only if the attachment was opened.
 5. **Monitor:** Look for related messages, redirects, follow-on activity, and attempts to contact the identified infrastructure.
 6. **Document:** Preserve the original message and relevant logs according to evidence-handling procedures; record tool names, query dates, and results.
 
@@ -151,3 +153,14 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | File hash / reputation | VirusTotal | 2026-11-04 | 50/64 security vendors flagged this file as malicious |
 | Other analysis | hxxps://dmarcian[.]com/spf-survey/, hxxps://www[.]virustotal[.]com/gui/home/search, hxxps://dmarcian[.]com/domain-checker/, hxxps://urlscan[.]io/, and hxxps://mxtoolbox[.]com/dkim[.]aspx | 2026-11-04 | See **Authentication Results** and **Attachment Analysis** above |
 | Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04| Spam detection software, running on the system "sub.redacted[.]com", has identified this incoming email as possible spam. |
+
+## Screenshots
+
+**Email Body**
+![Email Body](Image 01.png)
+
+**Email Message Source**
+![Email Message Source](Image 02.png)
+
+**VirusTotal Scan Results**
+![VirusTotal Scan Results](Image 03.png)
