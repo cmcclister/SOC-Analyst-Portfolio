@@ -1,11 +1,17 @@
 # Investigation #2 — "Phishing Email Analysis"
 
 > **Case status:** Lab investigation
+> 
 > **Environment:** TryHackMe's "The Greenholt Phish" training lab
+> 
 > **Analyst:** Christopher McClister
+> 
 > **Analysis date:** 2026-11-04
+> 
 > **Case / alert ID:** N/A
+> 
 > **Sample source:** hxxps://tryhackme[.]com/room/phishingemails5fgjlzxc
+> 
 > **Handling note:** Do not open links or attachments on a production workstation. Any sample data in this report has been sanitized for publication.
 
 **NOTE**: This is a guided exercise from TryHackMe's "The Greenholt Phish" training lab, and not an actual phishing email analysis. Differences between detection/alert dates and analysis dates are due to the relative age of this online exercise.
