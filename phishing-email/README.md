@@ -95,7 +95,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 **Analysis performed:** hash lookup at hxxps://www[.]virustotal[.]com/gui/home/search
 **Findings:** 50/64 security vendors flagged this file as malicious  
-**Safety note:** File was downloaded in an isolated environment. The file was sha256sum hashed in Terminal with the resulting hash value checked at hxxps://www[.]virustotal[.]com/gui/home/search
+**Safety note:** File was downloaded in an isolated environment. The file was **sha256sum** hashed in Terminal with the resulting hash value checked at hxxps://www[.]virustotal[.]com/gui/home/search
 
 ## Indicators of Compromise
 
