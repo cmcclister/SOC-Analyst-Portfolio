@@ -8,7 +8,7 @@
 > 
 > **Environment:** TryHackMe's "The Greenholt Phish" training lab
 > 
-> **Analyst:** Christopher McClister
+> **Analyst:** cmcclister
 > 
 > **Analysis date:** 2026-11-04
 > 
