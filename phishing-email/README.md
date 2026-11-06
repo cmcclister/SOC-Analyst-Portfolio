@@ -116,10 +116,14 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 ## Determination
 
-**Verdict:** Malicious  
+**Verdict:** Malicious
+
 **Confidence:** High
-**Rationale:** VirusTotal hash scan of the email attachment determined that it was a RAR archive file associated with Lokibot Trojan/Infostealer. 
-**Evidence gaps:**  No dynamic analysis, no ANY.RUN results, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened. 
+
+**Rationale:** VirusTotal hash scan of the email attachment determined that it was a RAR archive file associated with Lokibot Trojan/Infostealer.
+
+**Evidence gaps:**  No dynamic analysis, no ANY.RUN results, verdict of "No classification", per hxxps://urlscan[.]io/, no confirmation whether or not the file was opened.
+
 **Scope limitation:** Email message source was examined, as well as the hashed value of the attachment, in a controlled lab environment.
 
 ## Recommended Actions
