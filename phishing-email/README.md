@@ -85,7 +85,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | Domain | Role | Observations | Reputation / DNS check | Assessment |
 |---|---|---|---|---|
-| Received-SPF: mutawamarine[.]com, Authentication-Results: atlas[REDACTED][.]free[.]mail[.]bf1[.]yahoo[.]com | Sender | No SPF, DKIM or DMARC records found, per hxxps://mxtoolbox[.]com/dkim[.]aspx, hxxps://dmarcian[.]com/spf-survey/, and hxxps://dmarcian[.]com/domain-checker/. Per hxxps://urlscan[.]io/, verdict of "No classification". | Inconclusive, the limited information on this domain does not indicate that it is suspicious. **Received-SPF** value of **fail** in the email message source suggests that it may not be a safe domain. |
+| Received-SPF: mutawamarine[.]com, Authentication-Results: atlas[REDACTED][.]free[.]mail[.]bf1[.]yahoo[.]com | Sender | No SPF, DKIM or DMARC records found, per hxxps://mxtoolbox[.]com/dkim[.]aspx, hxxps://dmarcian[.]com/spf-survey/, and hxxps://dmarcian[.]com/domain-checker/. | Per hxxps://urlscan[.]io/, verdict of "No classification". | Inconclusive, the limited information on this domain does not indicate that it is suspicious. **Received-SPF** value of **fail** in the email message source suggests that it may not be a safe domain. |
 
 ## Attachment Analysis
 
