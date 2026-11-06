@@ -91,8 +91,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | File name | Type / size | SHA-256 | VirusTotal result | Assessment |
 |---|---|---:|---|---|
-| "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b
-2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer |
+| "SWT_#09674321____PDF__.CAB" | RAR Archive / 400.26 KB | 2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f | 2026-11-04, 50/64 security vendors flagged this file as malicious | Attachment identified as Lokibot Trojan/Infostealer |
 
 **Analysis performed:** hash lookup at hxxps://www[.]virustotal[.]com/gui/home/search
 **Findings:** 50/64 security vendors flagged this file as malicious  
