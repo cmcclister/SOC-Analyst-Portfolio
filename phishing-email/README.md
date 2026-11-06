@@ -158,11 +158,14 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 ## Screenshots
 
-**Email Body**
+**Email Body**:
+
 ![Email Body](Image_01.png)
 
-**Email Message Source**
+**Email Message Source**:
+
 ![Email Message Source](Image_02.png)
 
-**VirusTotal Scan Results**
+**VirusTotal Scan Results**:
+
 ![VirusTotal Scan Results](Image_03.png)
