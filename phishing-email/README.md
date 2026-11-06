@@ -23,7 +23,7 @@ An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(0967
 **Assessment:** Malicious  
 **Confidence:** High  
 **User interaction:** Attachment hash analyzed  
-**Impact observed:** None identified, attachment was not opened
+**Impact observed:** None identified, attachment was not opened by analyst
 
 The conclusion is based on **VirusTotal scan of email attachment hash, confirmed as a Trojan/Infostealer RAR archive file**.
 
