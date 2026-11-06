@@ -24,7 +24,7 @@ An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(0967
 
 **Assessment:** Malicious  
 **Confidence:** High  
-**User interaction:** Reported to by employee who received the email, attachment not opened
+**User interaction:** Reported by employee who received the email, attachment not opened
 **Analyst interaction:** Attachment hash analyzed  
 **Impact observed:** None identified, attachment was not opened by analyst
 
