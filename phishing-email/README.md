@@ -20,7 +20,7 @@
 
 ## Executive Summary
 
-An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(09674321)**, received by **webmaster@redacted[.]org** on **2020/06/10, 10:58 AM UTC**, was investigated after **the employee alerted us that this behavior does not align with the customer's usual communication style**. The analysis reviewed the message headers, sender authentication, domains, and attachment(s), with reputation checks performed using VirusTotal.
+An email titled **webmaster@redacted[.]org your: Transfer Reference Number:(09674321)**, received by **webmaster@redacted[.]org** on **2020/06/10, 10:58 AM UTC**, was investigated after **the employee alerted us that this behavior does not align with the customer's usual communication style**. The analyst reviewed the message headers, sender authentication, domains, and attachment(s), with reputation checks performed using VirusTotal.
 
 **Assessment:** Malicious  
 **Confidence:** High  
