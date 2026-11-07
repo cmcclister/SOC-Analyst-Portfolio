@@ -156,7 +156,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | URL / domain reputation | N/A | 2026-11-04 | The email did not contain any links |
 | File hash / reputation | VirusTotal | 2026-11-04 | 50/64 security vendors flagged this file as malicious |
 | Other analysis | hxxps://dmarcian[.]com/spf-survey/, hxxps://www[.]virustotal[.]com/gui/home/search, hxxps://dmarcian[.]com/domain-checker/, hxxps://urlscan[.]io/, and hxxps://mxtoolbox[.]com/dkim[.]aspx | 2026-11-04 | See **Authentication Results** and **Attachment Analysis** above |
-| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04| Spam detection software, running on the system "sub.redacted[.]com", has identified this incoming email as possible spam. |
+| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04| Spam detection software, running on the system "sub[.]redacted[.]com", has identified this incoming email as possible spam. |
 
 ## Screenshots
 
