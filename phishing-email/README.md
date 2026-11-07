@@ -152,11 +152,11 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 | Item | Tool / source | Check date and time (UTC) | Result / limitation |
 |---|---|---|---|
-| Email headers | Message source | 2026-11-04 | See **Email Metadata** above |
-| URL / domain reputation | N/A | 2026-11-04 | The email did not contain any links |
-| File hash / reputation | VirusTotal | 2026-11-04 | 50/64 security vendors flagged this file as malicious |
-| Other analysis | hxxps://dmarcian[.]com/spf-survey/, hxxps://www[.]virustotal[.]com/gui/home/search, hxxps://dmarcian[.]com/domain-checker/, hxxps://urlscan[.]io/, and hxxps://mxtoolbox[.]com/dkim[.]aspx | 2026-11-04 | See **Authentication Results** and **Attachment Analysis** above |
-| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04| Spam detection software, running on the system "sub[.]redacted[.]com", has identified this incoming email as possible spam. |
+| Message-ID | 20200609225823[.]DFAEAAF31A6B7414@mutawamarine[.]com | 2026-11-04 20:04 | Spam detection software, running on the system "sub[.]redacted[.]com", has identified this incoming email as possible spam. |
+| URL / domain reputation | N/A | 2026-11-04 20:04 | The email did not contain any links |
+| Email headers | Message source | 2026-11-04 20:07 | See **Email Metadata** above |
+| Other analysis | hxxps://dmarcian[.]com/spf-survey/, hxxps://www[.]virustotal[.]com/gui/home/search, hxxps://dmarcian[.]com/domain-checker/, hxxps://urlscan[.]io/, and hxxps://mxtoolbox[.]com/dkim[.]aspx | 2026-11-04 20:14 | See **Authentication Results** and **Attachment Analysis** above |
+| File hash / reputation | VirusTotal | 2026-11-04 20:22 | 50/64 security vendors flagged this file as malicious |
 
 ## Screenshots
 
