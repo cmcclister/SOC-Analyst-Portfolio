@@ -142,7 +142,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 
 ## Lessons Learned
 
-- The message attachment, hashed, and verified with VirusTotal was most useful in identifying the issue.
+- The message attachment, hashed and verified with VirusTotal, was most useful in identifying the issue.
 - While the email itself looked suspicious (generic greeting, odd formatting, inconsistent From and Reply-To addresses), an investigation into the sender's domain was inconclusive. The authentication results were mixed, and misaligned between the From, Reply-To, and Return-Path warrants further investigation. It was only after investigating the attachment that the email was confirmed as malicious.
 - VirusTotal established that the email attachment is an RAR archive file associated with Lokibot Trojan/Infostealer.
 - I believe that monitoring endpoint activity and scanning email attachments would help find an issue like this in the future.
