@@ -76,7 +76,7 @@ The sending infrastructure showed **IP address of 192[.]119[.]71[.][REDACTED]**.
 | DKIM | Unknown | No DKIM record found, per hxxps://mxtoolbox[.]com/dkim[.]aspx |
 | DMARC | Unknown | "dmarc=unknown" from email message source |
 
-**Interpretation:** Authentication on SPF failed and DKIM, and DMARC are both unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim[.]aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
+**Interpretation:** Authentication on SPF failed; DKIM and DMARC are both unknown, per email message source, hxxps://dmarcian[.]com/spf-survey/, hxxps://mxtoolbox[.]com/dkim[.]aspx, and hxxps://mxtoolbox[.]com/dkim[.]aspx. However, the "From" address is an immediate red flag as the sender details **info@mutawamarine[.]com** do not match the actual "Reply-To" address **info[.]mutawamarine@mail[.]com**. In addition, in the email message source, **Received-SPF** has a value of **fail (domain of mutawamarine does not designate x.x.x.x as permitted sender)**.
 
 ## URL Analysis
 
