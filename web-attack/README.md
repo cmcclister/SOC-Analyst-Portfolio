@@ -17,7 +17,7 @@ The final request contains a URL-encoded SQL-like expression: `%' OR '1'='1`. Th
 
 The first requests use `FFUF v2.1.0` as the user agent and probe multiple paths, including `/login.php`, `/social`, `/images`, `/manage`, `/corporate`, `/company`, `/files`, `/home`, `/catalog`, and `/products`. Some requests receive `200` responses, while others receive `404` responses.
 
-This pattern is consistent with automated directory or content discovery: a client tries candidate paths and compares responses to identify potentially interesting routes. A `200` response means the server returned a successful HTTP response, but it does not by itself prove that the path is a valid or useful application feature. The response body, application behavior, and any soft-404 behavior should also be checked.
+This pattern is consistent with automated directory or content discovery: a client tries candidate paths and compares responses to identify potentially interesting routes. A `200` response means the server returned a successful HTTP response, but it does not by itself prove that the path is a valid or useful application feature. The response body, application behavior, and any suspicious 404 behavior should also be checked.
 
 ### 2. Application behavior: login attempts and account access
 
