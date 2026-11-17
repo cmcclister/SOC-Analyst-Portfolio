@@ -1,4 +1,4 @@
-# Investigation #3 — Web Attack Investigation
+# Investigation #3 — "Web Attack Investigation"
 
 > **Environment:** TryHackMe lab — *Detecting Web Attacks*, Task 4: “Log-Based Detection”  
 > **Evidence reviewed:** `access.log` excerpt supplied with the lab  
