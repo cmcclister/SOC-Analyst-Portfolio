@@ -58,7 +58,7 @@ The expression is a recognizable SQL injection probe intended to alter the logic
 - **User agent on the final request:** `sqlmap/stable`
 - **Targeted endpoints:** `/login.php`, `/account/`, and `/account/changeusername.php`
 - **Observed payload:** `%' OR '1'='1`
-- **Behavioral indicators:** Rapid path enumeration and repeated login POST requests
+- **Behavioral indicators:** Rapid path enumeration and repeated login `POST` requests
 
 Treat these indicators as investigation leads, not as proof of a successful compromise. User-agent strings can be changed or spoofed, and an IP address should be assessed in its network and lab context.
 
