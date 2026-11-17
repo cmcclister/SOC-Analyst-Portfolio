@@ -7,7 +7,7 @@
 
 ## Executive summary
 
-The access log shows a source IP—redacted in the supplied evidence—making rapid requests to a web application. The activity begins with directory discovery using the `FFUF v2.1.0` user agent. It is followed by repeated requests to `/login.php`, including a `POST` request that receives a `302` response, and then requests to `/account` and `/account/changeusername.php`.
+The access log shows a source IP, redacted in the supplied evidence, making rapid requests to a web application. The activity begins with directory discovery using the `FFUF v2.1.0` user agent. It is followed by repeated requests to `/login.php`, including a `POST` request that receives a `302` response, and then requests to `/account` and `/account/changeusername.php`.
 
 The final request contains a URL-encoded SQL-like expression: `%' OR '1'='1`. This is consistent with a SQL injection attempt. Taken together, the sequence is suspicious and merits investigation. However, the access log alone does **not** prove that authentication succeeded or that SQL injection worked: the meaning of the `302` depends on the application’s behavior, and the final `200` response only shows that the server returned a response.
 
