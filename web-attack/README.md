@@ -86,3 +86,13 @@ A useful detection should correlate behavior across the sequence rather than ale
 This investigation demonstrates how HTTP-level observations can be translated into application and security questions: What paths were requested? How did the application respond? Did authentication actually succeed? Was the supplied parameter merely received, or did it affect a database query?
 
 A web development background is useful here because it helps connect routes, methods, parameters, redirects, and application behavior to the evidence in the logs. From a SOC perspective, the key is to turn those observations into a testable hypothesis, correlate them with other telemetry, and avoid treating suggestive evidence as confirmation without validation.
+
+## Screenshots
+
+**Access Log**:
+
+![Access Log](Image_01.png)
+
+**URL Decode**:
+
+![URL Decode](Image_02.png)
