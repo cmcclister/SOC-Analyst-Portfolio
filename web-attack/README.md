@@ -21,7 +21,7 @@ This pattern is consistent with automated directory or content discovery: a clie
 
 ### 2. Application behavior: login attempts and account access
 
-The log then shows repeated requests to `/login.php`, followed by a cluster of `POST` requests to the same endpoint. Most of the displayed 'POST' requests return `200`; one returns `302`. The source subsequently requests `/account`, which returns `301`, and `/account/`, which returns `200`.
+The log then shows repeated requests to `/login.php`, followed by a cluster of `POST` requests to the same endpoint. Most of the displayed `POST` requests return `200`; one returns `302`. The source subsequently requests `/account`, which returns `301`, and `/account/`, which returns `200`.
 
 This sequence is consistent with repeated login attempts followed by a redirect and access to account-related routes. A `302` indicates a redirect, not proof of successful authentication. To determine whether login succeeded, correlate the request with the `Location` response header, session or authentication logs, and the application’s expected behavior for failed and successful logins.
 
