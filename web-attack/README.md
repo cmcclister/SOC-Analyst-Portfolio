@@ -47,7 +47,7 @@ The expression is a recognizable SQL injection probe intended to alter the logic
 |---|---|---|
 | Reconnaissance | Rapid path requests using `FFUF v2.1.0`; mixed `200` and `404` responses | Consistent with automated directory discovery |
 | Login probing | Repeated `POST /login.php` requests in quick succession | Consistent with password-guessing or brute-force activity; request bodies are not shown |
-| Possible authentication transition | A login POST receives `302`; later requests target `/account` | Suspicious sequence, but the redirect alone does not confirm successful authentication |
+| Possible authentication transition | A login `POST` receives `302`; later requests target `/account` | Suspicious sequence, but the redirect alone does not confirm successful authentication |
 | SQL injection attempt | Encoded parameter on `/account/changeusername.php` decodes to `%' OR '1'='1`; user agent is `sqlmap/stable` | Strong indicator of an attempted SQL injection; success is not established by this access log |
 
 ## Indicators of compromise
