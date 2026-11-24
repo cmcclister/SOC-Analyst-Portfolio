@@ -56,7 +56,7 @@
 | 8:13:38 PM | Process Create | 1 | Google Chrome launched (normal user activity; baseline) |
 | 8:13:50 PM | File Created | 11 | `Downloads\3687b063-...tmp` created, a temporary download file by Chrome |
 | 8:13:55 PM | File Stream Created | 15 | Temporary file contents with unreadable characters; hashes generated |
-| 8:13:55 PM | File Created | 11 | `Downloads\URGENT!.zip:Zone.Identifier` (Mark of the Web) created |
+| 8:13:55 PM | File Created | 11 | `Downloads\URGENT!.zip:Zone.Identifier` created |
 | 8:13:55 PM | File Stream Created | 15 | `URGENT!.zip` written; Zone.Identifier shows ZoneId=3 (Internet) |
 | 8:13:55 PM | File Stream Created | 15 | Zone.Identifier records `ReferrerUrl=http://10.14.97.[REDACTED]` and `HostUrl=http://10.14.97.[REDACTED]/URGENT%21.zip` |
 | 8:13:58 PM | Process Create | 1 | `MicrosoftEdgeUpdate.exe /ua /installsource scheduler` (Microsoft update process; likely benign) |
