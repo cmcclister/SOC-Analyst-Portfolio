@@ -1,4 +1,4 @@
-# Investigation #4 — Windows Endpoint Investigation
+# Investigation #4 — "Windows Endpoint Investigation"
 
 **Lab Source:** TryHackMe, SOC Level 1: Windows Security Monitoring, Windows Threat Detection 3 (Task 2: Command and Control)
 
