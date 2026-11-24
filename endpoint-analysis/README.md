@@ -1,28 +1,22 @@
 # Investigation #4 — "Windows Endpoint Investigation"
 
-**Lab Source:** TryHackMe, SOC Level 1: Windows Security Monitoring, Windows Threat Detection 3 (Task 2: Command and Control)
-
-**Data Source:** Sysmon event logs
-
-**Analyst:** Christopher McClister
-
-**Report Date:** 11/24/2026
-
-**Classification:** Malicious (lab scenario)
+**Lab Source:** TryHackMe, SOC Level 1: Windows Security Monitoring, Windows Threat Detection 3 (Task 2: Command and Control) 
+**Data Source:** Sysmon event logs 
+**Analyst:** Christopher McClister 
+**Report Date:** 11/24/2026 
+**Classification:** Malicious (lab scenario) 
 
 ---
 
 ## Alert
 
-**Alert Name:** Suspicious PowerShell Download and Execution of Unsigned Executable
-
-**Severity:** High
-
+**Alert Name:** Suspicious PowerShell Download and Execution of Unsigned Executable 
+**Severity:** High 
 **Summary:** A ZIP archive (`URGENT!.zip`) was downloaded from an internal web server at `http://10.14.97.[REDACTED]`. Shortly after extraction, PowerShell retrieved `update.exe` from the same server, saved it to `%APPDATA%`, and executed it. The executable then made a DNS query to a suspicious domain that imitates Microsoft 365.
 
 **Detection Logic (Sysmon):**
 - Event ID 1 (Process Create): PowerShell with `iex`, `Invoke-WebRequest`, and `Start-Process` in the command line
-- Event ID 1: Execution of an executable from `AppData\Roaming`
+- Event ID 1 (Process Create): Execution of an executable from `AppData\Roaming`
 - Event ID 11 (File Create): Executable written to `AppData\Roaming`
 - Event ID 22 (DNS Query): Query to a non-Microsoft domain from an unknown binary
 
