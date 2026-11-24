@@ -179,7 +179,7 @@
 - Enable PowerShell script block logging and constrained language mode where practical.
 - Block execution of unsigned binaries from `AppData` using AppLocker or Windows Defender Application Control.
 - Configure web and DNS filtering to block newly registered and unknown domains.
-- Add user awareness training on urgent-themed files and shortcut (.lnk) files.
+- Add user awareness training on urgent-themed files and shortcut (`.lnk`) files.
 
 ---
 
