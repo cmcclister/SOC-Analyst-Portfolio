@@ -90,7 +90,7 @@
 - **Authentication events were not included in the provided data.** No logon events (Event ID 4624, 4625, 4672) were available to confirm how the session was started or whether any privilege escalation occurred.
 - **Session Context:** The process ran under `THM-DFIR-VM-3\Administrator`, which has local administrator rights. Running downloaded content in an administrator session increases the risk.
 
-**Recommended Next Steps:** Query the Security log for logons to THM-DFIR-VM-3 between 8:00 PM and 8:30 PM on 7/2/2025, and check for Event ID 4672 (special privileges assigned) and 4688 (process creation with token information).
+**Recommended Next Steps:** Query the Security log for logons to `THM-DFIR-VM-3` between 8:00 PM and 8:30 PM on 7/2/2025, and check for Event ID 4672 (special privileges assigned) and 4688 (process creation with token information).
 
 ---
 
@@ -98,8 +98,8 @@
 
 | Direction | Source | Destination | Port | Protocol | Notes |
 |---|---|---|---|---|---|
-| Outbound | 10.10.248.[REDACTED]:49739 | 10.14.97.[REDACTED]:80 | 80 | TCP (HTTP) | Source of `URGENT!.zip` and `update.exe`. The host is internal, but the server is not a known legitimate download source. |
-| Outbound | update.exe | route.m365officesync.workers.dev | 53 | DNS | Suspicious domain. It mimics Microsoft 365 branding and is hosted on Cloudflare Workers, which attackers commonly use for C2 infrastructure. |
+| Outbound | `10.10.248.[REDACTED]:49739` | `10.14.97.[REDACTED]:80` | 80 | TCP (HTTP) | Source of `URGENT!.zip` and `update.exe`. The host is internal, but the server is not a known legitimate download source. |
+| Outbound | `update.exe` | `route.m365officesync.workers.dev` | 53 | DNS | Suspicious domain. It mimics Microsoft 365 branding and is hosted on Cloudflare Workers, which attackers commonly use for C2 infrastructure. |
 
 **Analyst Note:** The download server is an internal private IP (10.14.97.[REDACTED]), so the file may have been staged internally or by a compromised internal host. Investigate that server's logs as well.
 
