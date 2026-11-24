@@ -65,8 +65,8 @@
 | 8:14:07 PM | File Stream Created | 15 | Shortcut Zone.Identifier records `ReferrerUrl=C:\Users\Administrator\Downloads\URGENT!.zip` |
 | 8:14:12 PM | Process Create | 1 | PowerShell executes: download `update.exe` from `http://10.14.97.[REDACTED]/update.exe` to `%APPDATA%` and run it |
 | 8:14:13 PM | File Created | 11 | PowerShell script policy test file created (normal PowerShell behavior, though it confirms script execution) |
-| 8:14:13 PM | File Created | 11 | `AppData\Roaming\update.exe` written (PE executable) |
-| 8:14:14 PM | Network Connection | 3 | Outbound TCP from 10.10.248.[REDACTED]:49739 to 10.14.97.[REDACTED]:80 (payload download) |
+| 8:14:13 PM | File Created | 11 | `AppData\Roaming\update.exe` written (Portable Executable) |
+| 8:14:14 PM | Network Connection | 3 | Outbound TCP from `10.10.248.[REDACTED]:49739` to `10.14.97.[REDACTED]:80` (payload download) |
 | 8:14:28 PM | Process Create | 1 | `C:\Users\Administrator\AppData\Roaming\update.exe` launched by PowerShell |
 | 8:14:30 PM | DNS Query | 22 | `route.m365officesync.workers.dev` queried by `update.exe` |
 
