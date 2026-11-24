@@ -128,8 +128,6 @@
 | Command and Control | Application Layer Protocol: Web Protocols | **T1071.001** | HTTP on port 80 used for payload delivery |
 | Command and Control | Application Layer Protocol: DNS | **T1071.004** | Query to `route.m365officesync.workers.dev` from the payload |
 
-**Note:** T1566 is listed as a possibility because the delivery method is not visible in the logs. Confirm it with email or browser history before treating it as confirmed.
-
 ---
 
 ## Investigation Conclusions
