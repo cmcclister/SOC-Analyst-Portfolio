@@ -146,7 +146,7 @@
 **Open Questions:**
 - Did `update.exe` create persistence (Run keys, scheduled tasks, services)?
 - Did other hosts download `URGENT!.zip` from `10.14.97.[REDACTED]`?
-- Does the 10.14.97.[REDACTED] server host other suspicious files?
+- Does the `10.14.97.[REDACTED]` server host other suspicious files?
 
 ---
 
