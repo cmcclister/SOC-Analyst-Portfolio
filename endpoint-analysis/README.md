@@ -120,7 +120,7 @@
 
 | Tactic | Technique | ID | Evidence |
 |---|---|---|---|
-| Initial Access | Phishing: Spearphishing Attachment or Link | **T1566.001** / **T1566.002** | Possible delivery method for `URGENT!.zip` (delivery vector not confirmed in logs) |
+| Initial Access | Phishing: Spearphishing Attachment or Link | **T1566.001** / **T1566.002** (*possible*) | Possible delivery method for `URGENT!.zip` (delivery vector not confirmed in logs) |
 | Execution | User Execution: Malicious File | **T1204.002** (*possible*) | The archive, extracted directory, and shortcut could be part of a user-execution chain, but the supplied telemetry does not prove that a user opened the archive or shortcut |
 | Execution | Command and Scripting Interpreter: PowerShell | **T1059.001** | `powershell.exe` with `iex` and `Invoke-WebRequest` |
 | Stealth | Masquerading: Match Legitimate Name or Location | **T1036.005** | `update.exe` in `AppData\Roaming` with a generic name |
