@@ -153,7 +153,7 @@
 ## Recommended Response
 
 ### Immediate Containment
-- Isolate THM-DFIR-VM-3 from the network to prevent further C2 communication.
+- Isolate `THM-DFIR-VM-3` from the network to prevent further C2 communication.
 - Terminate `update.exe` and preserve it for analysis.
 - Block `route.m365officesync.workers.dev` at DNS and proxy level.
 - Block outbound traffic to `10.14.97.[REDACTED]` from endpoints except where it is required.
@@ -171,7 +171,7 @@
 
 ### Scope and Hunting
 - Search all endpoints for the file hashes, filename `update.exe` in `AppData\Roaming`, and DNS queries to the suspicious domain.
-- Review logs on 10.14.97.[REDACTED] for other downloads or suspicious requests.
+- Review logs on `10.14.97.[REDACTED]` for other downloads or suspicious requests.
 - Check whether other users downloaded `URGENT!.zip`.
 
 ### Preventive Measures
