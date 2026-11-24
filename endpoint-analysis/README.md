@@ -101,7 +101,7 @@
 | Outbound | `10.10.248.[REDACTED]:49739` | `10.14.97.[REDACTED]:80` | 80 | TCP (HTTP) | Source of `URGENT!.zip` and `update.exe`. The host is internal, but the server is not a known legitimate download source. |
 | Outbound | `update.exe` | `route.m365officesync.workers.dev` | 53 | DNS | Suspicious domain. It mimics Microsoft 365 branding and is hosted on Cloudflare Workers, which attackers commonly use for C2 infrastructure. |
 
-**Analyst Note:** The download server is an internal private IP (10.14.97.[REDACTED]), so the file may have been staged internally or by a compromised internal host. Investigate that server's logs as well.
+**Analyst Note:** The download server is an internal private IP (`10.14.97.[REDACTED]`), so the file may have been staged internally or by a compromised internal host. Investigate that server's logs as well.
 
 ---
 
