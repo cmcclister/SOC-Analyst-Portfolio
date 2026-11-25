@@ -10,6 +10,8 @@
 
 **Classification:** Malicious (lab scenario) 
 
+---
+
 ## Alert
 
 **Alert Name:** Suspicious PowerShell Download and Execution of Unsigned Executable 
