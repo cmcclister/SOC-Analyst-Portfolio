@@ -10,8 +10,6 @@
 
 **Classification:** Malicious (lab scenario) 
 
-> **Scope:** Analysis of the supplied Sysmon timeline from the TryHackMe Windows Threat Detection lab. This report distinguishes directly observed evidence from interpretations; it does not establish malware identity or impact beyond the available events.
-
 ## Alert
 
 **Alert Name:** Suspicious PowerShell Download and Execution of Unsigned Executable 
