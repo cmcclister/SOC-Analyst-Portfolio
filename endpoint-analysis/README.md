@@ -32,9 +32,9 @@
 
 | Field | Value |
 |---|---|
-| Hostname | THM-DFIR-VM-3 |
-| FQDN | THM-DFIR-VM-3.eu-west-1.compute.internal |
-| Source IP | 10.10.248.[REDACTED] |
+| Hostname | `THM-DFIR-VM-3` |
+| FQDN | `THM-DFIR-VM-3.eu-west-1.compute.internal` |
+| Source IP | `10.10.248.[REDACTED]` |
 | OS | Windows (version not provided in logs) |
 | Role | Endpoint (workstation/VM) |
 
@@ -44,8 +44,8 @@
 
 | Field | Value |
 |---|---|
-| Account in Network and DNS events | THM-DFIR-VM-3\Administrator |
-| Profile Path | C:\Users\Administrator |
+| Account in Network and DNS events | `THM-DFIR-VM-3\Administrator` |
+| Profile Path | `C:\Users\Administrator` |
 
 ---
 
