@@ -1,13 +1,9 @@
 # Investigation #4 — "Windows Endpoint Investigation"
 
-**Lab Source:** TryHackMe, SOC Level 1: Windows Security Monitoring, Windows Threat Detection 3 (Task 2: Command and Control) 
-
+**Lab Source:** TryHackMe, SOC Level 1: Windows Security Monitoring, Windows Threat Detection 3 (Task 2: Command and Control)
 **Data Source:** Sysmon event logs 
-
 **Analyst:** Christopher McClister 
-
 **Report Date:** 11/24/2026 
-
 **Classification:** Malicious (lab scenario) 
 
 ---
